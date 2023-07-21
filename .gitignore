@@ -6,4 +6,4 @@
 /.quarto/
 
 # ignore book builds
-*/_book/*
+_book/
