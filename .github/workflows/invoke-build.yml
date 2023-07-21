@@ -2,8 +2,10 @@ name: invoke build in gha-website-test
 
 on:
   push:
-    branches: [ "**" ]
-    
+    branches:
+      - main
+      - '2023-08**'
+      
 jobs:
   dispatch:
     runs-on: ubuntu-latest
