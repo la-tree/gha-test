@@ -2,9 +2,9 @@ name: invoke build in gha-website-test
 
 on:
   push:
-    branches:
-      - main
-      - '2023-08-delta'
+    branches: ['**']
+      #- main
+      #- '2023-08-delta'
       
 jobs:
   dispatch:
