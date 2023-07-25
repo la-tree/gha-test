@@ -1,0 +1,27 @@
+name: invoke build in gha-website-test
+
+on:
+  push:
+    branches:
+      - main
+      - '2023-08-**'
+  pull_request:
+    branches:
+      - main
+      - '2023-08-**'
+      
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - uses: actions/github-script@v6
+      with:
+        github-token: ${{ secrets.GHAWEBT }}
+        script: |
+          await github.rest.actions.createWorkflowDispatch({
+            owner: 'hdolinh',
+            repo: 'gha-website-test',
+            workflow_id: 'build.yml',
+            ref: 'main'
+          })
